@@ -51,9 +51,21 @@ def numnodes(root):
     #becase of this +1 only we are able to add all those if we remove +1 we get ans as zero becasue from last it starts counting and left,right will be zero some point and it will add all those zeroes only ,finally we get zero,in order to get a value we need to give +1 this is interview question very important and careful
     return 1+leftcount+rightcount
 
+
+#to get sum of each node
+def sum_of_nodes_tree(root):
+    if root is None:
+        return 0
+
+#it is actually fetching its value
+    return root.data + sum_of_nodes_tree(root.left) + sum_of_nodes_tree(root.right)
+
+
     
 root = treeinput()
 printTreeDetail(root)
 print("the no of nodes is ",numnodes(root))
+result = sum_of_nodes_tree(root)
+print("the sum of the nodes is ",result)
 
 #note:in order to print none simply give -1 and first try to finish a tree ,and then next go to other tree
