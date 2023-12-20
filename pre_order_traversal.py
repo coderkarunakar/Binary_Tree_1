@@ -28,13 +28,7 @@ def buildTree(arr):
     
     return root
 
-def preOrderTraversal(root):
-    if root is None:
-        return
-    
-    print(root.data, end=" ")
-    preOrderTraversal(root.left)
-    preOrderTraversal(root.right)
+
 
 # Reading input
 nodes = list(map(int, input().split()))
@@ -42,5 +36,4 @@ nodes = list(map(int, input().split()))
 # Building the tree
 root = buildTree(nodes)
 
-# Perform pre-order traversal and print the result
-preOrderTraversal(root)
+
