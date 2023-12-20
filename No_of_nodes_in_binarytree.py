@@ -59,13 +59,7 @@ def sum_of_nodes_tree(root):
 
 #it is actually fetching its value
     return root.data + sum_of_nodes_tree(root.left) + sum_of_nodes_tree(root.right)
-def preOrderTraversal(root):
-    if root is None:
-        return
-    
-    print(root.data, end=" ")
-    preOrderTraversal(root.left)
-    preOrderTraversal(root.right)
+
 
 
     
@@ -74,5 +68,6 @@ printTreeDetail(root)
 print("the no of nodes is ",numnodes(root))
 result = sum_of_nodes_tree(root)
 print("the sum of the nodes is ",result)
-preOrderTraversal(root)
+
+
 #note:in order to print none simply give -1 and first try to finish a tree ,and then next go to other tree
