@@ -49,5 +49,4 @@ nodes = list(map(int, input().split()))
 # Building the tree
 root = buildTree(nodes)
 
-# Perform pre-order traversal and print the result
-preOrderTraversal(root)
+
