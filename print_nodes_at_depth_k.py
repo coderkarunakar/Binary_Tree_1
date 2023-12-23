@@ -54,9 +54,27 @@ def printDepthK(root,k):
         return 
     printDepthK(root.left, k-1)
     printDepthK(root.right, k-1)
+
+
+
+#Approach -2 here we are mataining the current depth value i.e d and initializing it to 0 and depth value need to reach i.e k
+def printDepthAtKV2(root,k,d=0):
+    if root == None:
+        return
+    if k==d:
+        print(root.data)
+        return
+    printDepthAtKV2(root.left,k,d+1)
+    printDepthAtKV2(root.right,k,d+1)
+
+# #this k represents the depth i.e level 0,1,2....
+# print("the nodes at the given depth is ")
+# printDepthK(root,2)
+
+
 root = treeinput()
 printTreeDetail(root)
-#this k represents the depth i.e level 0,1,2....
-print("the nodes at the given depth is ")
-printDepthK(root,2)
+print("Approach 2 the nodes at the given depth is ")
+printDepthAtKV2(root,2)
+
 #note:in order to print none simply give -1 and first try to finish a tree ,and then next go to other tree
