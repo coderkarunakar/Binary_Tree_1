@@ -40,7 +40,30 @@ def treeinput():
     root.left = leftTree
     root.right = rightTree
     return root
+
+
+#Assignment Problem
+#checking is node preseent or not in the given nodes for the value of x
+#here x is a particular no which we are searching in the nodes
+def isNodePresent(root, x):
+    #checking data exist or not
+    if root is None:
+        return False
+    
+    #if data is equal to our searching value then return trure
+    if root.data == x:
+        return True
+    
+    # Recursively search in the left and right subtrees
+    #search in the left,right positions
+    return isNodePresent(root.left, x) or isNodePresent(root.right, x)
+
+    
 root = treeinput()
+data_to_find = int(input("enter the value of x"))
+
 printTreeDetail(root)
+result = isNodePresent(root, data_to_find)
+print(result)
 
 #note:in order to print none simply give -1 and first try to finish a tree ,and then next go to other tree
